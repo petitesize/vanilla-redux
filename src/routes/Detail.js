@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { actionCreators } from "../store";
+import { remove } from "../store";
 
 function Detail() {
   const { id } = useParams();
@@ -9,7 +9,7 @@ function Detail() {
   const navigate = useNavigate();
   const toDo = toDos.find((toDo) => toDo.id === parseInt(id));
   const onDelete = () => {
-    dispatch(actionCreators.deleteTodo(id));
+    dispatch(remove(parseInt(id)));
     navigate("/");
   };
   return (

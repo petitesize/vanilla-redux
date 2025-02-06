@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
-import { actionCreators } from "../store";
+import { remove } from "../store";
 import { Link } from "react-router-dom";
 
 function ToDo({ text, id }) {
   const dispatch = useDispatch();
   const onDelete = () => {
-    dispatch(actionCreators.deleteTodo(id));
+    dispatch(remove(id));
   };
   return (
     <li>
